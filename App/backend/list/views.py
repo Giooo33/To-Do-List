@@ -49,3 +49,8 @@ def user_profile(request):
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
 
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("API do app List funcionando 🚀")
+

@@ -28,9 +28,14 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         if attrs['password'] != attrs['password_confirm']:
             raise serializers.ValidationError("As senhas não coincidem.")
+        # Forçar username e email para minúsculo
+        attrs['username'] = attrs['username'].lower()
+        attrs['email'] = attrs['email'].lower()
         return attrs
 
     def create(self, validated_data):
+        validated_data['username'] = validated_data['username'].lower()
+        validated_data['email'] = validated_data['email'].lower()
         validated_data.pop('password_confirm')
         user = User.objects.create_user(**validated_data)
         return user
