@@ -2,6 +2,10 @@
 
 Este projeto é uma aplicação de lista de tarefas (To-Do List) com backend em Django REST Framework e frontend em React (Vite + Tailwind CSS).
 
+## Acesso da aplicação
+
+ Acesse o site: "https://kkraties13.github.io/github-pages-to-do-list" para testar a aplicação
+
 ## Pré-requisitos
 
 - Python 3.10 ou superior
